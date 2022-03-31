@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.75, 9.125" name="basejdr">
+  <DataContextMoniker Name="/basejdrDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e1f5e313-118c-4233-af40-c7b19bb38707" absoluteBounds="2.625, 0.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/basejdrDataContext/PERSO_OBJET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69c37f65-9c9c-4e70-9941-fb308c0ad750" absoluteBounds="2.6399999999999997, 1.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="edb08eeb-dc3c-4775-879f-400777fa5f29" absoluteBounds="3.25, 5.25, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/basejdrDataContext/PERSO_COMP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6497c443-4d58-49e2-8b71-87e200cee3a7" absoluteBounds="3.265, 5.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f884466a-8f53-42a1-95ff-a9f34768a512" absoluteBounds="7.875, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/basejdrDataContext/JOUEUR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43a6e243-272a-4c85-88de-4ac13a785c4a" absoluteBounds="7.8900000000000006, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4e03c1b-2a31-416c-913a-19229094d32f" absoluteBounds="0.5, 2.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/basejdrDataContext/PARTIE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f136ef43-7e5b-41d2-8555-0d4da243393a" absoluteBounds="0.51500000000000012, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf0fcbe9-1a5b-437a-b23a-d3bed37ae768" absoluteBounds="2.25, 3.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/basejdrDataContext/PERSO_PARTIE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="daad9fcc-9be1-400b-b32f-37e270b6c8ef" absoluteBounds="2.2649999999999997, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.3749995 : 3.5112939453125); (1.3749995 : 4.34699625651042); (2.25 : 4.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/basejdrDataContext/PARTIE/PARTIE_PERSO_PARTIE" />
+      <nodes>
+        <classShapeMoniker Id="a4e03c1b-2a31-416c-913a-19229094d32f" />
+        <classShapeMoniker Id="cf0fcbe9-1a5b-437a-b23a-d3bed37ae768" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7748c959-341f-468f-b271-712536347eb6" absoluteBounds="8.25, 4.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/basejdrDataContext/CLASSE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="912470f9-b97a-44cf-8ea9-13241b77635f" absoluteBounds="8.265, 4.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="40d43415-12a1-4cbc-931e-8fa805e15314" absoluteBounds="6.125, 5.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/basejdrDataContext/RACE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="619fd635-4398-45bd-b5ad-96c050a3bbc1" absoluteBounds="6.14, 5.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7211f6bf-64e0-4274-96dc-d43bef56d5b5" absoluteBounds="0.625, 5.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/basejdrDataContext/COMPETENCE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d6946646-81dd-4e5a-a6f5-bc242dc79e6c" absoluteBounds="0.63999999999999968, 6.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 6.03449625651042); (3.25 : 6.03449625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/basejdrDataContext/COMPETENCE/COMPETENCE_PERSO_COMP" />
+      <nodes>
+        <classShapeMoniker Id="7211f6bf-64e0-4274-96dc-d43bef56d5b5" />
+        <classShapeMoniker Id="edb08eeb-dc3c-4775-879f-400777fa5f29" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="92b08773-3dae-49f7-95e2-1a70ba5db226" absoluteBounds="3.125, 7.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/basejdrDataContext/OBJET_RARE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="289a53a4-5b66-4b97-87d7-975330dad6b2" absoluteBounds="3.1399999999999997, 7.5850000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f9a3c08-8791-4e72-a14a-b02262aff8c3" absoluteBounds="12.75, 1.5, 2, 4.2708154296875">
+      <DataClassMoniker Name="/basejdrDataContext/ViewPersoPseudo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50c530f0-0fd5-456e-a96f-02eda239f057" absoluteBounds="12.765, 1.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef33e878-ed67-484e-86ee-dd805275500e" absoluteBounds="15.5, 2.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/basejdrDataContext/View_Partie_Perso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="29c2b2ce-bf17-4586-a5a2-dff3a0fde9fe" absoluteBounds="15.515, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e48b643-6d9d-4777-a351-419bd64f6a8d" absoluteBounds="10.5, 1.375, 2, 4.2708154296875">
+      <DataClassMoniker Name="/basejdrDataContext/View_personnage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8935a0a-6374-4ab8-9f13-ef8537f39c98" absoluteBounds="10.515, 1.835, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="75206e19-a77c-42fd-8497-53e726aede90" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/basejdrDataContext/OBJET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="41d6b329-5464-477d-aa26-e64150adf5b6" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.22199625651042); (2.625 : 1.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/basejdrDataContext/OBJET/OBJET_PERSO_OBJET" />
+      <nodes>
+        <classShapeMoniker Id="75206e19-a77c-42fd-8497-53e726aede90" />
+        <classShapeMoniker Id="e1f5e313-118c-4233-af40-c7b19bb38707" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b015f687-a9ca-4292-8111-423c1481a4a9" absoluteBounds="5.25, 0.75, 2, 4.2708154296875">
+      <DataClassMoniker Name="/basejdrDataContext/PERSONNAGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6443e2b0-6e79-4075-a976-d4ce70b5cb3b" absoluteBounds="5.265, 1.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 1.28449625651042); (4.625 : 1.28449625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/basejdrDataContext/PERSONNAGE/PERSONNAGE_PERSO_OBJET" />
+      <nodes>
+        <classShapeMoniker Id="b015f687-a9ca-4292-8111-423c1481a4a9" />
+        <classShapeMoniker Id="e1f5e313-118c-4233-af40-c7b19bb38707" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.25 : 5.0208154296875); (6.25 : 5.2128154296875); (5.83558333333333 : 5.2128154296875 : JumpStart); (5.66891666666667 : 5.2128154296875 : JumpEnd); (5.442 : 5.2128154296875); (5.442 : 5.84699625651042); (5.25 : 5.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/basejdrDataContext/PERSONNAGE/PERSONNAGE_PERSO_COMP" />
+      <nodes>
+        <classShapeMoniker Id="b015f687-a9ca-4292-8111-423c1481a4a9" />
+        <classShapeMoniker Id="edb08eeb-dc3c-4775-879f-400777fa5f29" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.25 : 4.34699625651042); (4.25 : 4.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/basejdrDataContext/PERSONNAGE/PERSONNAGE_PERSO_PARTIE" />
+      <nodes>
+        <classShapeMoniker Id="b015f687-a9ca-4292-8111-423c1481a4a9" />
+        <classShapeMoniker Id="cf0fcbe9-1a5b-437a-b23a-d3bed37ae768" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75225 : 5.0208154296875); (5.75225 : 8.34059895833333); (5.125 : 8.34059895833333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/basejdrDataContext/PERSONNAGE/PERSONNAGE_OBJET_RARE" />
+      <nodes>
+        <classShapeMoniker Id="b015f687-a9ca-4292-8111-423c1481a4a9" />
+        <classShapeMoniker Id="92b08773-3dae-49f7-95e2-1a70ba5db226" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.63540771484375); (7.25 : 4.63540771484375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/basejdrDataContext/CLASSE/CLASSE_PERSONNAGE" />
+      <nodes>
+        <classShapeMoniker Id="7748c959-341f-468f-b271-712536347eb6" />
+        <classShapeMoniker Id="b015f687-a9ca-4292-8111-423c1481a4a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.875 : 1.85659912109375); (7.25 : 1.85659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/basejdrDataContext/JOUEUR/JOUEUR_PERSONNAGE" />
+      <nodes>
+        <classShapeMoniker Id="f884466a-8f53-42a1-95ff-a9f34768a512" />
+        <classShapeMoniker Id="b015f687-a9ca-4292-8111-423c1481a4a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.8125 : 5.375); (6.8125 : 5.0208154296875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/basejdrDataContext/RACE/RACE_PERSONNAGE" />
+      <nodes>
+        <classShapeMoniker Id="40d43415-12a1-4cbc-931e-8fa805e15314" />
+        <classShapeMoniker Id="b015f687-a9ca-4292-8111-423c1481a4a9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

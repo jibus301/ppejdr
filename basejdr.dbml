@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="projet_prosql" Class="basejdrDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=projet_prosql;Integrated Security=True" SettingsObjectName="formjdrppe.Properties.Settings" SettingsPropertyName="projet_prosqlConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PERSO_OBJET" Member="PERSO_OBJET">
+    <Type Name="PERSO_OBJET">
+      <Column Name="id_objet" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_perso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="OBJET_PERSO_OBJET" Member="OBJET" ThisKey="id_objet" OtherKey="id_objet" Type="OBJET" IsForeignKey="true" />
+      <Association Name="PERSONNAGE_PERSO_OBJET" Member="PERSONNAGE" ThisKey="id_perso" OtherKey="id_perso" Type="PERSONNAGE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERSO_COMP" Member="PERSO_COMP">
+    <Type Name="PERSO_COMP">
+      <Column Name="id_competence" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_perso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="COMPETENCE_PERSO_COMP" Member="COMPETENCE" ThisKey="id_competence" OtherKey="id_competence" Type="COMPETENCE" IsForeignKey="true" />
+      <Association Name="PERSONNAGE_PERSO_COMP" Member="PERSONNAGE" ThisKey="id_perso" OtherKey="id_perso" Type="PERSONNAGE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JOUEUR" Member="JOUEUR">
+    <Type Name="JOUEUR">
+      <Column Name="id_joueur" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pseudo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pass" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="admin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="JOUEUR_PERSONNAGE" Member="PERSONNAGE" ThisKey="id_joueur" OtherKey="id_joueur" Type="PERSONNAGE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PARTIE" Member="PARTIE">
+    <Type Name="PARTIE">
+      <Column Name="id_partie" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="date_start" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="PARTIE_PERSO_PARTIE" Member="PERSO_PARTIE" ThisKey="id_partie" OtherKey="id_partie" Type="PERSO_PARTIE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERSO_PARTIE" Member="PERSO_PARTIE">
+    <Type Name="PERSO_PARTIE">
+      <Column Name="id_perso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_partie" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="PARTIE_PERSO_PARTIE" Member="PARTIE" ThisKey="id_partie" OtherKey="id_partie" Type="PARTIE" IsForeignKey="true" />
+      <Association Name="PERSONNAGE_PERSO_PARTIE" Member="PERSONNAGE" ThisKey="id_perso" OtherKey="id_perso" Type="PERSONNAGE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLASSE" Member="CLASSE">
+    <Type Name="CLASSE">
+      <Column Name="id_class" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pv" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="force" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intelligence" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="agilite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="initiative" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="social" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CLASSE_PERSONNAGE" Member="PERSONNAGE" ThisKey="id_class" OtherKey="id_class" Type="PERSONNAGE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RACE" Member="RACE">
+    <Type Name="RACE">
+      <Column Name="id_race" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pv" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="force" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intelligence" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="agilite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="initiative" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="social" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="RACE_PERSONNAGE" Member="PERSONNAGE" ThisKey="id_race" OtherKey="id_race" Type="PERSONNAGE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COMPETENCE" Member="COMPETENCE">
+    <Type Name="COMPETENCE">
+      <Column Name="id_competence" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="stat_liee" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="valeur" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="COMPETENCE_PERSO_COMP" Member="PERSO_COMP" ThisKey="id_competence" OtherKey="id_competence" Type="PERSO_COMP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OBJET_RARE" Member="OBJET_RARE">
+    <Type Name="OBJET_RARE">
+      <Column Name="id_obj_rare" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_perso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="stats" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="PERSONNAGE_OBJET_RARE" Member="PERSONNAGE" ThisKey="id_perso" OtherKey="id_perso" Type="PERSONNAGE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewPersoPseudo" Member="ViewPersoPseudo">
+    <Type Name="ViewPersoPseudo">
+      <Column Name="id_perso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="niveau" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="txt_long" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dgt_cc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dgt_ad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="def" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="img" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_joueur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_class" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_race" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pv" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="force" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agilite" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intelligence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="initiative" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="social" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pseudo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Partie_Perso" Member="View_Partie_Perso">
+    <Type Name="View_Partie_Perso">
+      <Column Name="nom" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Expr1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_perso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_joueur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_personnage" Member="View_personnage">
+    <Type Name="View_personnage">
+      <Column Name="nom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="niveau" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pseudo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Expr2" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dgt_cc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dgt_ad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="def" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_perso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_joueur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pv" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="force" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agilite" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intelligence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="initiative" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="social" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="txt_long" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OBJET" Member="OBJET">
+    <Type Name="OBJET">
+      <Column Name="id_objet" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="valeur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="stat_liee" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="OBJET_PERSO_OBJET" Member="PERSO_OBJET" ThisKey="id_objet" OtherKey="id_objet" Type="PERSO_OBJET" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERSONNAGE" Member="PERSONNAGE">
+    <Type Name="PERSONNAGE">
+      <Column Name="id_perso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="niveau" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="txt_long" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="dgt_cc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dgt_ad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="def" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="img" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="id_joueur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_class" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_race" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pv" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="force" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="agilite" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intelligence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="initiative" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="social" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pnj" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PERSONNAGE_PERSO_OBJET" Member="PERSO_OBJET" ThisKey="id_perso" OtherKey="id_perso" Type="PERSO_OBJET" />
+      <Association Name="PERSONNAGE_PERSO_COMP" Member="PERSO_COMP" ThisKey="id_perso" OtherKey="id_perso" Type="PERSO_COMP" />
+      <Association Name="PERSONNAGE_PERSO_PARTIE" Member="PERSO_PARTIE" ThisKey="id_perso" OtherKey="id_perso" Type="PERSO_PARTIE" />
+      <Association Name="PERSONNAGE_OBJET_RARE" Member="OBJET_RARE" ThisKey="id_perso" OtherKey="id_perso" Type="OBJET_RARE" />
+      <Association Name="CLASSE_PERSONNAGE" Member="CLASSE" ThisKey="id_class" OtherKey="id_class" Type="CLASSE" IsForeignKey="true" />
+      <Association Name="JOUEUR_PERSONNAGE" Member="JOUEUR" ThisKey="id_joueur" OtherKey="id_joueur" Type="JOUEUR" IsForeignKey="true" />
+      <Association Name="RACE_PERSONNAGE" Member="RACE" ThisKey="id_race" OtherKey="id_race" Type="RACE" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

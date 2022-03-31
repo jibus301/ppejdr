@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A047D05B-7D5D-4151-9894-37D1A5E2ABDC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>formjdrppe</RootNamespace>
+    <AssemblyName>formjdrppe</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EngineIoClientDotNet, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\EngineIoClientDotNet.1.0.2-beta1\lib\net45\EngineIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIOClient, Version=3.0.5.0, Culture=neutral, PublicKeyToken=c9a3629195a82104, processorArchitecture=MSIL">
+      <HintPath>packages\SocketIOClient.3.0.5\lib\netstandard2.0\SocketIOClient.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIoClientDotNet, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SocketIoClientDotNet.1.0.2-beta1\lib\net45\SocketIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine, Version=0.8.0.12, Culture=neutral, PublicKeyToken=ee9af13f57f00acc, processorArchitecture=MSIL">
+      <HintPath>packages\SuperSocket.ClientEngine.Core.0.8.0.12\lib\net45\SuperSocket.ClientEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.Specialized.4.3.0\lib\net46\System.Collections.Specialized.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NameResolution, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.NameResolution.4.3.0\lib\net46\System.Net.NameResolution.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Security.4.3.0\lib\net46\System.Net.Security.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebSocket4Net, Version=0.15.0.9, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <HintPath>packages\WebSocket4Net.0.15.0-beta9\lib\net45\WebSocket4Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="basejdr.cs">
+      <DependentUpon>basejdr.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="basejdr.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>basejdr.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="chat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chat.Designer.cs">
+      <DependentUpon>chat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChatSocketIo.cs" />
+    <Compile Include="ChildPerso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildPerso.Designer.cs">
+      <DependentUpon>ChildPerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connexion.Designer.cs">
+      <DependentUpon>connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="creationClasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creationClasse.Designer.cs">
+      <DependentUpon>creationClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="creationCompetence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creationCompetence.Designer.cs">
+      <DependentUpon>creationCompetence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="creationJoueur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creationJoueur.Designer.cs">
+      <DependentUpon>creationJoueur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="creationObjetRare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creationObjetRare.Designer.cs">
+      <DependentUpon>creationObjetRare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="creationObjets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creationObjets.Designer.cs">
+      <DependentUpon>creationObjets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="creationPartie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creationPartie.Designer.cs">
+      <DependentUpon>creationPartie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="creationPerso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creationPerso.Designer.cs">
+      <DependentUpon>creationPerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="creationPersonnageJoueur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creationPersonnageJoueur.Designer.cs">
+      <DependentUpon>creationPersonnageJoueur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="creationRace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creationRace.Designer.cs">
+      <DependentUpon>creationRace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ecranPartie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ecranPartie.Designer.cs">
+      <DependentUpon>ecranPartie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FichePerso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FichePerso.Designer.cs">
+      <DependentUpon>FichePerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="global.cs" />
+    <Compile Include="home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="joueur_non_base.cs" />
+    <Compile Include="ListeJoueur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeJoueur.Designer.cs">
+      <DependentUpon>ListeJoueur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListePartie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListePartie.Designer.cs">
+      <DependentUpon>ListePartie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListePerso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListePerso.Designer.cs">
+      <DependentUpon>ListePerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mesPerso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mesPerso.Designer.cs">
+      <DependentUpon>mesPerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="message.cs" />
+    <Compile Include="partieEnCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="partieEnCours.Designer.cs">
+      <DependentUpon>partieEnCours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="projet_prosqlDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projet_prosqlDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projet_prosqlDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vuepersos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vuepersos.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="chat.resx">
+      <DependentUpon>chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildPerso.resx">
+      <DependentUpon>ChildPerso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="connexion.resx">
+      <DependentUpon>connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creationClasse.resx">
+      <DependentUpon>creationClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creationCompetence.resx">
+      <DependentUpon>creationCompetence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creationJoueur.resx">
+      <DependentUpon>creationJoueur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creationObjetRare.resx">
+      <DependentUpon>creationObjetRare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creationObjets.resx">
+      <DependentUpon>creationObjets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creationPartie.resx">
+      <DependentUpon>creationPartie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creationPerso.resx">
+      <DependentUpon>creationPerso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creationPersonnageJoueur.resx">
+      <DependentUpon>creationPersonnageJoueur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creationRace.resx">
+      <DependentUpon>creationRace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ecranPartie.resx">
+      <DependentUpon>ecranPartie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FichePerso.resx">
+      <DependentUpon>FichePerso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeJoueur.resx">
+      <DependentUpon>ListeJoueur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListePartie.resx">
+      <DependentUpon>ListePartie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListePerso.resx">
+      <DependentUpon>ListePerso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mesPerso.resx">
+      <DependentUpon>mesPerso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="partieEnCours.resx">
+      <DependentUpon>partieEnCours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="basejdr.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>basejdr.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="basejdr.dbml.layout">
+      <DependentUpon>basejdr.dbml</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="projet_prosqlDataSet.xsc">
+      <DependentUpon>projet_prosqlDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet.xss">
+      <DependentUpon>projet_prosqlDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet1.xsc">
+      <DependentUpon>projet_prosqlDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet1.xss">
+      <DependentUpon>projet_prosqlDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet10.xsc">
+      <DependentUpon>projet_prosqlDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet10.xss">
+      <DependentUpon>projet_prosqlDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet11.xsc">
+      <DependentUpon>projet_prosqlDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet11.xss">
+      <DependentUpon>projet_prosqlDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet12.xsc">
+      <DependentUpon>projet_prosqlDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet12.xss">
+      <DependentUpon>projet_prosqlDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet13.xsc">
+      <DependentUpon>projet_prosqlDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet13.xss">
+      <DependentUpon>projet_prosqlDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet14.xsc">
+      <DependentUpon>projet_prosqlDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet14.xss">
+      <DependentUpon>projet_prosqlDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet15.xsc">
+      <DependentUpon>projet_prosqlDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet15.xss">
+      <DependentUpon>projet_prosqlDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet16.xsc">
+      <DependentUpon>projet_prosqlDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet16.xss">
+      <DependentUpon>projet_prosqlDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet17.xsc">
+      <DependentUpon>projet_prosqlDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet17.xss">
+      <DependentUpon>projet_prosqlDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet18.xsc">
+      <DependentUpon>projet_prosqlDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet18.xss">
+      <DependentUpon>projet_prosqlDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet2.xsc">
+      <DependentUpon>projet_prosqlDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet2.xss">
+      <DependentUpon>projet_prosqlDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet3.xsc">
+      <DependentUpon>projet_prosqlDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet3.xss">
+      <DependentUpon>projet_prosqlDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet4.xsc">
+      <DependentUpon>projet_prosqlDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet4.xss">
+      <DependentUpon>projet_prosqlDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet5.xsc">
+      <DependentUpon>projet_prosqlDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet5.xss">
+      <DependentUpon>projet_prosqlDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet6.xsc">
+      <DependentUpon>projet_prosqlDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet6.xss">
+      <DependentUpon>projet_prosqlDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet7.xsc">
+      <DependentUpon>projet_prosqlDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet7.xss">
+      <DependentUpon>projet_prosqlDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet8.xsc">
+      <DependentUpon>projet_prosqlDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet8.xss">
+      <DependentUpon>projet_prosqlDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet9.xsc">
+      <DependentUpon>projet_prosqlDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="projet_prosqlDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projet_prosqlDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="projet_prosqlDataSet9.xss">
+      <DependentUpon>projet_prosqlDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Vuepersos.xsc">
+      <DependentUpon>Vuepersos.xsd</DependentUpon>
+    </None>
+    <None Include="Vuepersos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Vuepersos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Vuepersos.xss">
+      <DependentUpon>Vuepersos.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>
