@@ -30,13 +30,20 @@ namespace formjdrppe
 
         public static string charaName;
 
+        public static User ConnectedUser;
 
-        public static void connexion(string username, string password, bool valid)
+        public static string token;
+
+
+        public static void connexion(bool valid)
         {
-            global.user = username;
-            global.pw = password;
             global.ACCES_PROGRAMME = true;
         }
 
+    }
+    public class Token
+    {
+        public string token { get; set; }
+        
     }
 }

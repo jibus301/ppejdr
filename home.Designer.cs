@@ -188,7 +188,7 @@ namespace formjdrppe
             this.nouvelleCompétenceToolStripMenuItem,
             this.listeCompétencesToolStripMenuItem});
             this.compétenceToolStripMenuItem.Name = "compétenceToolStripMenuItem";
-            this.compétenceToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.compétenceToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.compétenceToolStripMenuItem.Text = "Compétences";
             // 
             // nouvelleCompétenceToolStripMenuItem
@@ -212,7 +212,7 @@ namespace formjdrppe
             this.nouvelObjetUniqueToolStripMenuItem,
             this.listeObjetUniqueToolStripMenuItem});
             this.objetsToolStripMenuItem.Name = "objetsToolStripMenuItem";
-            this.objetsToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.objetsToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.objetsToolStripMenuItem.Text = "Objets";
             // 
             // nouvelObjetToolStripMenuItem
@@ -247,7 +247,7 @@ namespace formjdrppe
             this.nouvelleClasseToolStripMenuItem,
             this.listeDesClassesToolStripMenuItem});
             this.classesToolStripMenuItem.Name = "classesToolStripMenuItem";
-            this.classesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.classesToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.classesToolStripMenuItem.Text = "Classes";
             // 
             // nouvelleClasseToolStripMenuItem
@@ -269,7 +269,7 @@ namespace formjdrppe
             this.nouvelleRaceToolStripMenuItem,
             this.listesDesRacesToolStripMenuItem});
             this.racesToolStripMenuItem.Name = "racesToolStripMenuItem";
-            this.racesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.racesToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.racesToolStripMenuItem.Text = "Races";
             // 
             // nouvelleRaceToolStripMenuItem
@@ -315,6 +315,7 @@ namespace formjdrppe
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.home_FormClosing);
             this.Load += new System.EventHandler(this.home_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

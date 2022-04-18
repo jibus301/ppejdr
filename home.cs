@@ -147,5 +147,10 @@ namespace formjdrppe
             creationObjets obj = new creationObjets();
             obj.ShowDialog();
         }
+
+        private async void home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            await api.LogoutAsync();
+        }
     }
 }

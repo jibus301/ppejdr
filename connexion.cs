@@ -24,55 +24,48 @@ namespace formjdrppe
         }
 
 
-        private bool IsvalidUser(string userName, string password)
+        private async void IsValidUser(string userName, string password)
         {
-            basejdrDataContext db = new basejdrDataContext();
-            var q = from p in db.JOUEUR
-                    where p.pseudo == userName
-                    && p.pass == password
-                    select p;
-            if (q.Any())
-            {
-                foreach (JOUEUR joueur in q)
-                {
-                    global.isAdmin = joueur.admin;
-                    global.idJoueurConnecte = joueur.id_joueur;
-                }
-                    
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        void validation(string pseudo = null , string pass = null)
-        {
-            if (pseudo == null && pass == null)
-            {
-                pseudo = textBoxPseudo.Text;
-                pass = textBoxPass.Text;
-            }
+            // api Login 
+            
             
 
-            if (IsvalidUser(pseudo, pass))
+        }
+
+        private async void Login(string username, string password)
+        {
+            
+           
+            UserLogin user = new UserLogin(username, password);
+            bool isValidUser = await api.LoginAsync(user);
+
+            if (isValidUser == true)
             {
-                global.connexion(pseudo, pass, true);
-                //textBox1.Text = global.apiList();
+
+                await api.GetUserAsync();
+                //global.ConnectedUser = new User();
+                global.ACCES_PROGRAMME = true;
                 this.Close();
+
+
+                
             }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            validation();
+            string username = textBoxPseudo.Text;
+            string password = textBoxPass.Text;
+            Login(username , password);
         }
 
         private void textBoxPass_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) validation();
+            string username = textBoxPseudo.Text;
+            string password = textBoxPass.Text;
+            if (e.KeyCode == Keys.Enter) Login(username, password);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -88,7 +81,7 @@ namespace formjdrppe
 
         private void button2_Click(object sender, EventArgs e)
         {
-            validation("admin","1");
+            Login("admin", "P@ssword1");
         }
     }
 }
