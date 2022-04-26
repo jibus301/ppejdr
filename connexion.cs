@@ -36,13 +36,18 @@ namespace formjdrppe
         {
             
            
-            UserLogin user = new UserLogin(username, password);
-            bool isValidUser = await api.LoginAsync(user);
+            UserLogin userlogin = new UserLogin(username, password);
+            bool isValidUser = await api.LoginAsync(userlogin);
 
             if (isValidUser == true)
             {
 
-                await api.GetUserAsync();
+                global.ConnectedUser = await api.GetUserAsync();
+
+                if (global.ConnectedUser.Admin == true)
+                {
+                    global.isAdmin = true;
+                }
                 //global.ConnectedUser = new User();
                 global.ACCES_PROGRAMME = true;
                 this.Close();

@@ -25,29 +25,7 @@ namespace formjdrppe
         }
     }
 
-    public class User
-    {
-        public int Id;
-        public string Username;
-        public string Firstname;
-        public string Lastname;
-        public bool Admin;
-        public DateTime CreatedAt;
-        public DateTime UpdatedAt;
-
-
-        public User(int id, string username, string firstname, string lastname, bool admin, DateTime ca, DateTime ua)
-        {
-            Id = id;
-            Username = username;
-            Firstname = firstname;
-            Lastname = lastname;
-            Admin = admin;
-            CreatedAt = ca;
-            UpdatedAt = ua;
-
-        }
-    }
+    
 
     class api
     {
@@ -114,23 +92,26 @@ namespace formjdrppe
 
         public static async Task<User> GetUserAsync()
         {
-            client.DefaultRequestHeaders.Accept.Clear();
+            User user = null;
             HttpResponseMessage response = await client.GetAsync("user/me");
             response.EnsureSuccessStatusCode();
-            var resUser = await response.Content.ReadAsStringAsync();
-            User test = JsonSerializer.Deserialize<User>(resUser);
+
+           
+
+            if (response.IsSuccessStatusCode)
+            {
+                user = await response.Content.ReadAsAsync<User>();
+            }
+            return user;
 
 
-            // return URI of the created resource.
-            return test;
         }
 
 
 
         static async Task<Uri> CreateAsync(string route, object content)
         {
-            HttpResponseMessage response = await client.PostAsJsonAsync(
-                route, content);
+            HttpResponseMessage response = await client.PostAsJsonAsync(route, content);
             response.EnsureSuccessStatusCode();
 
             // return URI of the created resource.

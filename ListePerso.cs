@@ -19,20 +19,14 @@ namespace formjdrppe
 
         private void ListePerso_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'projet_prosqlDataSet18.View_personnage'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.view_personnageTableAdapter6.Fill(this.projet_prosqlDataSet18.View_personnage);
-
-
+            
         }
 
 
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            FichePerso ficheperso = new FichePerso(id);
-
-            ficheperso.ShowDialog();
+            
 
 
         }

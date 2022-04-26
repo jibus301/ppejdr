@@ -11,69 +11,94 @@ namespace formjdrppe
         public static string message;
         private static SocketIO socket;
 
-        
+
         public delegate void Connect() ;
         public delegate void AddMessage(String message);
         public AddMessage addMessage;
 
+
         public chat()
         {
-            Uri uri = new Uri("http://localhost:11004/");
+            Uri uri = new Uri("http://localhost:8080/");
 
-            socket = new SocketIO(uri, new SocketIOOptions
+            
+
+            if (global.token == "")
             {
-                Query = new Dictionary<string, string>
+                this.Close();
+                connexion cnx = new connexion();
+                cnx.ShowDialog();
+            }
+            else
+            {
+                InitializeComponent();
+                socket = new SocketIO(uri, new SocketIOOptions
+                {
+                    Query = new Dictionary<string, string>
                             {
-                                {"token", "V4" }
+                                {"token", global.token }
                             },
-            });
+                });
 
-            socket.On("hi", response =>
+
+
+                //socket.On("connection", response =>
+                //    {
+                //        message = response.ToString();
+                //        if (message != "" && message != null)
+                //        {
+                //            Invoke(this.addMessage, new object[] { message });
+                //        }
+                //    });
+
+                //;
+                ConnectMethod();
+                socket.On("connected", response =>
+                {
+                    message = response.ToString();
+                    if (message != "" && message != null)
+                    {
+                        Invoke(this.addMessage, new object[] { message });
+                    }
+
+                });
+
+
+                
+
+            }
+
+            
+        }
+        private void chat_Load(object sender, EventArgs e)
+        {
+            
+
+            
+            addMessage = new AddMessage(AddMessageMethod);
+            socket.On("message", response =>
             {
-                // Console.WriteLine(response.ToString());
-                //Console.WriteLine(response.GetValue<string>());
                 message = response.ToString();
-               
                 if (message != "" && message != null)
                 {
                     Invoke(this.addMessage, new object[] { message });
                 }
             });
 
-            addMessage = new AddMessage(AddMessageMethod);
-            socket.OnConnected += Socket_OnConnected;
-            socket.OnConnected += async (sender, e) =>
-            {
-                string username = global.charaName;
-                if (username == "" || username == null)
-                {
-                    username = global.user;
-                }
-
-                // Emit a string
-                await socket.EmitAsync("hi", username + " vient de se connecter");
-
-                // Emit a string and an object
-                var dto = new FileDTO { Id = 123, Name = "bob" };
-                await socket.EmitAsync("register", "source", dto);
-            };
-
-            
-
-
-            InitializeComponent();
-            ConnectMethod();
         }
 
-        private async void  Socket_OnConnected(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public static async void ConnectMethod()
         {
             await socket.ConnectAsync();
+
+            int id_room = 1;
+            await socket.EmitAsync("enter_room", id_room);
+            
+
         }
+
 
         public void AddMessageMethod(String message)
         {
@@ -82,14 +107,14 @@ namespace formjdrppe
 
         public static async void SendMsg(string message)
         {
-            string username = global.charaName;
-            if (username == "" || username == null) 
-            {
-                username = global.user;
-            }
+            //string username = global.charaName;
+            //if (username == "" || username == null)
+            //{
+            //    username = global.user;
+            //}
             //await socket.ConnectAsync();
-            object[] data = new object[] {username + ": " +message};
-            await socket.EmitAsync("hi", data);
+            object[] data = new object[] { message };
+            await socket.EmitAsync("message", data);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -109,6 +134,8 @@ namespace formjdrppe
         {
 
         }
+
+        
     }
 
 }
