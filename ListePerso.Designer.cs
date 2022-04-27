@@ -48,6 +48,7 @@ namespace formjdrppe
             this.viewpersonnageBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.view_personnageTableAdapter2 = new formjdrppe.VuepersosTableAdapters.View_personnageTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_perso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewpersonnageBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.projet_prosqlDataSet18 = new formjdrppe.projet_prosqlDataSet18();
             this.viewpersonnageBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
@@ -62,12 +63,6 @@ namespace formjdrppe
             this.projet_prosqlDataSet17 = new formjdrppe.projet_prosqlDataSet17();
             this.projetprosqlDataSet17BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.view_personnageTableAdapter6 = new formjdrppe.projet_prosqlDataSet18TableAdapters.View_personnageTableAdapter();
-            this.id_perso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pseudoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.niveauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expr2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.projet_prosqlDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewPersoPseudoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projet_prosqlDataSet4)).BeginInit();
@@ -161,7 +156,6 @@ namespace formjdrppe
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -173,13 +167,7 @@ namespace formjdrppe
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_perso,
-            this.pseudoDataGridViewTextBoxColumn,
-            this.nomDataGridViewTextBoxColumn,
-            this.niveauDataGridViewTextBoxColumn,
-            this.expr1DataGridViewTextBoxColumn,
-            this.expr2DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.viewpersonnageBindingSource6;
+            this.id_perso});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,6 +192,13 @@ namespace formjdrppe
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            // 
+            // id_perso
+            // 
+            this.id_perso.DataPropertyName = "id_perso";
+            this.id_perso.HeaderText = "id";
+            this.id_perso.Name = "id_perso";
+            this.id_perso.ReadOnly = true;
             // 
             // viewpersonnageBindingSource6
             // 
@@ -271,48 +266,6 @@ namespace formjdrppe
             // 
             this.view_personnageTableAdapter6.ClearBeforeFill = true;
             // 
-            // id_perso
-            // 
-            this.id_perso.DataPropertyName = "id_perso";
-            this.id_perso.HeaderText = "id";
-            this.id_perso.Name = "id_perso";
-            this.id_perso.ReadOnly = true;
-            // 
-            // pseudoDataGridViewTextBoxColumn
-            // 
-            this.pseudoDataGridViewTextBoxColumn.DataPropertyName = "pseudo";
-            this.pseudoDataGridViewTextBoxColumn.HeaderText = "pseudo";
-            this.pseudoDataGridViewTextBoxColumn.Name = "pseudoDataGridViewTextBoxColumn";
-            this.pseudoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // niveauDataGridViewTextBoxColumn
-            // 
-            this.niveauDataGridViewTextBoxColumn.DataPropertyName = "niveau";
-            this.niveauDataGridViewTextBoxColumn.HeaderText = "niveau";
-            this.niveauDataGridViewTextBoxColumn.Name = "niveauDataGridViewTextBoxColumn";
-            this.niveauDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // expr1DataGridViewTextBoxColumn
-            // 
-            this.expr1DataGridViewTextBoxColumn.DataPropertyName = "Expr1";
-            this.expr1DataGridViewTextBoxColumn.HeaderText = "Race";
-            this.expr1DataGridViewTextBoxColumn.Name = "expr1DataGridViewTextBoxColumn";
-            this.expr1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // expr2DataGridViewTextBoxColumn
-            // 
-            this.expr2DataGridViewTextBoxColumn.DataPropertyName = "Expr2";
-            this.expr2DataGridViewTextBoxColumn.HeaderText = "Classe";
-            this.expr2DataGridViewTextBoxColumn.Name = "expr2DataGridViewTextBoxColumn";
-            this.expr2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // ListePerso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,10 +331,5 @@ namespace formjdrppe
         private System.Windows.Forms.BindingSource viewpersonnageBindingSource6;
         private projet_prosqlDataSet18TableAdapters.View_personnageTableAdapter view_personnageTableAdapter6;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_perso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pseudoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn niveauDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expr2DataGridViewTextBoxColumn;
     }
 }

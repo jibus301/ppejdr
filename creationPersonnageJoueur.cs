@@ -36,31 +36,27 @@ namespace formjdrppe
 
         private void creationPersonnageJoueur_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'projet_prosqlDataSet1.CLASSE'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.cLASSETableAdapter.Fill(this.projet_prosqlDataSet1.CLASSE);
-            // TODO: cette ligne de code charge les données dans la table 'projet_prosqlDataSet.RACE'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.rACETableAdapter.Fill(this.projet_prosqlDataSet.RACE);
 
-            refreshStat();
+            //refreshStat();
             
-            DirectoryInfo dir = new DirectoryInfo(@".\\images");
-            FileInfo[] imageFiles = dir.GetFiles("*.jpg");
-            ImageList imageList1 = new ImageList();
-            foreach (FileInfo f in imageFiles)
-            {
-                imageList1.Images.Add(Image.FromFile(f.FullName));
+            //DirectoryInfo dir = new DirectoryInfo(@".\\images");
+            //FileInfo[] imageFiles = dir.GetFiles("*.jpg");
+            //ImageList imageList1 = new ImageList();
+            //foreach (FileInfo f in imageFiles)
+            //{
+            //    imageList1.Images.Add(Image.FromFile(f.FullName));
 
 
-                string name = f.Name.Replace(".jpg", "");
-                dictImage[f.FullName] = name;
-                listeImage.DataSource = new BindingSource(dictImage, null);
-                listeImage.DisplayMember = "Value";
-                listeImage.ValueMember = "Key";
+            //    string name = f.Name.Replace(".jpg", "");
+            //    dictImage[f.FullName] = name;
+            //    listeImage.DataSource = new BindingSource(dictImage, null);
+            //    listeImage.DisplayMember = "Value";
+            //    listeImage.ValueMember = "Key";
 
-            }
+            //}
 
 
-            pictureBox.Image = imageList1.Images[0];
+            //pictureBox.Image = imageList1.Images[0];
 
 
         }
@@ -138,62 +134,62 @@ namespace formjdrppe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (bonusTotal == 0 && textBoxNom.Text != "")
-            {
+            //if (bonusTotal == 0 && textBoxNom.Text != "")
+            //{
 
-                basejdrDataContext db = new basejdrDataContext();
-
-
-                pers.nom = textBoxNom.Text;
-
-                pers.niveau = 1;
-
-                pers.txt_long = "";
-
-                pers.img = "";
-
-                pers.id_joueur = global.idJoueurConnecte;
-
-                pers.id_class = Convert.ToInt32(comboBoxClasse.SelectedValue);
-
-                pers.id_race = Convert.ToInt32(comboBoxRace.SelectedValue);
-
-                pers.pnj = false;
-
-                pers.img = ((KeyValuePair<string, string>)listeImage.SelectedItem).Key;
+            //    basejdrDataContext db = new basejdrDataContext();
 
 
+            //    pers.nom = textBoxNom.Text;
+
+            //    pers.niveau = 1;
+
+            //    pers.txt_long = "";
+
+            //    pers.img = "";
+
+            //    pers.id_joueur = global.idJoueurConnecte;
+
+            //    pers.id_class = Convert.ToInt32(comboBoxClasse.SelectedValue);
+
+            //    pers.id_race = Convert.ToInt32(comboBoxRace.SelectedValue);
+
+            //    pers.pnj = false;
+
+            //    pers.img = ((KeyValuePair<string, string>)listeImage.SelectedItem).Key;
 
 
-                Stats();
 
-                db.PERSONNAGE.InsertOnSubmit(pers);
-                try
-                {
-                    db.SubmitChanges();
-                }
-                catch (Exception err)
-                {
-                    Console.WriteLine(err);
-                    // Make some adjustments.
-                    // ...
-                    // Try again.
-                    db.SubmitChanges();
-                }
 
-                this.Close();
-            }
-            else
-            {
-                if (bonusTotal != 0)
-                {
-                    MessageBox.Show("Dépensez tous vos points dans les bonus");
-                }
-                else
-                {
-                    MessageBox.Show("Votre personnage se nomme personne ? Pensez à vous donner un nom !");
-                }
-            }
+            //    Stats();
+
+            //    db.PERSONNAGE.InsertOnSubmit(pers);
+            //    try
+            //    {
+            //        db.SubmitChanges();
+            //    }
+            //    catch (Exception err)
+            //    {
+            //        Console.WriteLine(err);
+            //        // Make some adjustments.
+            //        // ...
+            //        // Try again.
+            //        db.SubmitChanges();
+            //    }
+
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    if (bonusTotal != 0)
+            //    {
+            //        MessageBox.Show("Dépensez tous vos points dans les bonus");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Votre personnage se nomme personne ? Pensez à vous donner un nom !");
+            //    }
+            //}
         }
 
         private void label6_Click(object sender, EventArgs e)

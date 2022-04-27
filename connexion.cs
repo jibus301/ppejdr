@@ -88,5 +88,10 @@ namespace formjdrppe
         {
             Login("admin", "P@ssword1");
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Login("User", "P@ssword1");
+        }
     }
 }

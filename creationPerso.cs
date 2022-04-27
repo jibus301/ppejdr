@@ -21,12 +21,7 @@ namespace formjdrppe
 
         private void creationPerso_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'projet_prosqlDataSet2.JOUEUR'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.jOUEURTableAdapter.Fill(this.projet_prosqlDataSet2.JOUEUR);
-            // TODO: cette ligne de code charge les données dans la table 'projet_prosqlDataSet1.CLASSE'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.cLASSETableAdapter.Fill(this.projet_prosqlDataSet1.CLASSE);
-            // TODO: cette ligne de code charge les données dans la table 'projet_prosqlDataSet.RACE'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.rACETableAdapter.Fill(this.projet_prosqlDataSet.RACE);
+            
             competences();
             objets();
 
@@ -50,31 +45,31 @@ namespace formjdrppe
 
         private void competences()
         {
-            using (var cnx = new basejdrDataContext())
-            {
-                var req = from table in cnx.COMPETENCE
-                        select table;
+            //using (var cnx = new basejdrDataContext())
+            //{
+            //    var req = from table in cnx.COMPETENCE
+            //            select table;
 
-                foreach (COMPETENCE comp in req)
-                {
-                    checkedListCompetence.Items.Add(comp.nom);
-                }
-            }
+            //    foreach (COMPETENCE comp in req)
+            //    {
+            //        checkedListCompetence.Items.Add(comp.nom);
+            //    }
+            //}
         }
 
 
         private void objets()
         {
-            using (var cnx = new basejdrDataContext())
-            {
-                var req = from table in cnx.OBJET
-                          select table;
+            //using (var cnx = new basejdrDataContext())
+            //{
+            //    var req = from table in cnx.OBJET
+            //              select table;
 
-                foreach (OBJET obj in req)
-                {
-                    checkedListObjet.Items.Add(obj.nom);
-                }
-            }
+            //    foreach (OBJET obj in req)
+            //    {
+            //        checkedListObjet.Items.Add(obj.nom);
+            //    }
+            //}
         }
         private void Stats()
         {
@@ -133,51 +128,51 @@ namespace formjdrppe
 
 
 
-            basejdrDataContext db = new basejdrDataContext();
-             this.pers = new PERSONNAGE
-            {
+            //basejdrDataContext db = new basejdrDataContext();
+            // this.pers = new PERSONNAGE
+            //{
                 
 
-                nom = textBoxNom.Text,
+            //    nom = textBoxNom.Text,
 
-                niveau = Convert.ToInt32(maskedTextBoxNiveau.Text),
+            //    niveau = Convert.ToInt32(maskedTextBoxNiveau.Text),
 
-                txt_long = "",
+            //    txt_long = "",
 
-                dgt_cc = Convert.ToInt32(maskedTextBoxDgtCc.Text),
+            //    dgt_cc = Convert.ToInt32(maskedTextBoxDgtCc.Text),
 
-                dgt_ad = Convert.ToInt32(maskedTextBoxDgtAd.Text),
+            //    dgt_ad = Convert.ToInt32(maskedTextBoxDgtAd.Text),
 
-                def = Convert.ToInt32(maskedTextBoxDef.Text),
+            //    def = Convert.ToInt32(maskedTextBoxDef.Text),
 
-                img = "",
+            //    img = "",
 
-                id_joueur = Convert.ToInt32(comboBoxJoueur.SelectedValue),
+            //    id_joueur = Convert.ToInt32(comboBoxJoueur.SelectedValue),
 
-                id_class = Convert.ToInt32(comboBoxClasse.SelectedValue),
+            //    id_class = Convert.ToInt32(comboBoxClasse.SelectedValue),
 
-                id_race = Convert.ToInt32(comboBoxRace.SelectedValue),
+            //    id_race = Convert.ToInt32(comboBoxRace.SelectedValue),
 
                 
-            };
+            //};
 
-            Stats();
+            //Stats();
 
-            db.PERSONNAGE.InsertOnSubmit(pers);
-            try
-            {
-                db.SubmitChanges();
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err);
-                // Make some adjustments.
-                // ...
-                // Try again.
-                db.SubmitChanges();
-            }
+            //db.PERSONNAGE.InsertOnSubmit(pers);
+            //try
+            //{
+            //    db.SubmitChanges();
+            //}
+            //catch (Exception err)
+            //{
+            //    Console.WriteLine(err);
+            //    // Make some adjustments.
+            //    // ...
+            //    // Try again.
+            //    db.SubmitChanges();
+            //}
 
-            this.Close();
+            //this.Close();
 
         }
 

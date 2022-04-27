@@ -57,7 +57,7 @@ namespace formjdrppe
             this.nouvelleRaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listesDesRacesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelParent = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@ namespace formjdrppe
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 4, 0, 4);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(491, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1270, 32);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -292,26 +292,30 @@ namespace formjdrppe
             this.chatToolStripMenuItem.Text = "chat";
             this.chatToolStripMenuItem.Click += new System.EventHandler(this.chatToolStripMenuItem_Click);
             // 
-            // panel1
+            // panelParent
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GrayText;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(40, 62);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(30);
-            this.panel1.Size = new System.Drawing.Size(409, 403);
-            this.panel1.TabIndex = 1;
+            this.panelParent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelParent.BackColor = System.Drawing.SystemColors.GrayText;
+            this.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelParent.Location = new System.Drawing.Point(12, 44);
+            this.panelParent.Name = "panelParent";
+            this.panelParent.Padding = new System.Windows.Forms.Padding(30);
+            this.panelParent.Size = new System.Drawing.Size(1246, 615);
+            this.panelParent.TabIndex = 1;
             // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 11F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(491, 503);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1270, 671);
+            this.Controls.Add(this.panelParent);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Himalaya", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "home";
@@ -353,7 +357,7 @@ namespace formjdrppe
         private System.Windows.Forms.ToolStripMenuItem listeObjetUniqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem partieEnCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mesPersonnagesToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelParent;
         private System.Windows.Forms.ToolStripMenuItem chatToolStripMenuItem;
     }
 }

@@ -43,7 +43,19 @@ namespace formjdrppe
             }
 
         }
+        public void childFen(Form child)
+        {
 
+            child.MdiParent = this;
+            //child.TopLevel = false;
+            child.FormBorderStyle = FormBorderStyle.None;
+            child.Dock = DockStyle.Fill;
+            //panelParent.Visible = true;
+            panelParent.Controls.Add(child);
+            //panelParent.Tag = child;
+            child.BringToFront();
+            child.Show();
+        }
         private void nouveauToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (global.isAdmin == true) 
@@ -69,7 +81,7 @@ namespace formjdrppe
         private void afficherTousLesPersonnagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListePerso Persos = new ListePerso();
-            Persos.ShowDialog();
+            childFen(Persos);
         }
 
         private void afficherTousLesJoueursToolStripMenuItem_Click(object sender, EventArgs e)
