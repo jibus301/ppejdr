@@ -299,7 +299,7 @@ namespace formjdrppe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelParent.BackColor = System.Drawing.SystemColors.GrayText;
             this.panelParent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelParent.Location = new System.Drawing.Point(12, 44);
+            this.panelParent.Location = new System.Drawing.Point(12, 41);
             this.panelParent.Name = "panelParent";
             this.panelParent.Padding = new System.Windows.Forms.Padding(30);
             this.panelParent.Size = new System.Drawing.Size(1246, 615);

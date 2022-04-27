@@ -87,13 +87,13 @@ namespace formjdrppe
         private void afficherTousLesJoueursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListeJoueur joueur = new ListeJoueur();
-            joueur.ShowDialog();
+            childFen(joueur);
         }
 
         private void afficherLesPartiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListePartie partie = new ListePartie();
-            partie.ShowDialog();
+            childFen(partie);
         }
 
         private void nouvelleClasseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,13 +128,13 @@ namespace formjdrppe
         private void partieEnCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             partieEnCours rare = new partieEnCours();
-            rare.ShowDialog();
+            childFen(rare);
         }
 
         private void mesPersonnagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mesPerso Persos = new mesPerso();
-            Persos.ShowDialog();
+            childFen(Persos);
         }
 
         private void personnageToolStripMenuItem_Click(object sender, EventArgs e)
