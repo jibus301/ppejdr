@@ -43,8 +43,6 @@ namespace formjdrppe
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewPartiePersoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.view_Partie_PersoTableAdapter2 = new formjdrppe.DataSet1TableAdapters.View_Partie_PersoTableAdapter();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.projet_prosqlDataSet14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewPartiePersoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projet_prosqlDataSet15)).BeginInit();
@@ -89,12 +87,7 @@ namespace formjdrppe
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nomDataGridViewTextBoxColumn,
-            this.expr1DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.viewPartiePersoBindingSource4;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -130,22 +123,6 @@ namespace formjdrppe
             // view_Partie_PersoTableAdapter2
             // 
             this.view_Partie_PersoTableAdapter2.ClearBeforeFill = true;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // expr1DataGridViewTextBoxColumn
-            // 
-            this.expr1DataGridViewTextBoxColumn.DataPropertyName = "Expr1";
-            this.expr1DataGridViewTextBoxColumn.HeaderText = "Expr1";
-            this.expr1DataGridViewTextBoxColumn.Name = "expr1DataGridViewTextBoxColumn";
-            this.expr1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.expr1DataGridViewTextBoxColumn.Width = 250;
             // 
             // partieEnCours
             // 
@@ -185,7 +162,5 @@ namespace formjdrppe
         private System.Windows.Forms.BindingSource viewPartiePersoBindingSource3;
         
         private System.Windows.Forms.BindingSource viewPartiePersoBindingSource4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
     }
 }

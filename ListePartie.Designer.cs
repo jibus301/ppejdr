@@ -31,9 +31,6 @@ namespace formjdrppe
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idpartieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datestartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pARTIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projet_prosqlDataSet9 = new formjdrppe.projet_prosqlDataSet9();
             this.pARTIETableAdapter = new formjdrppe.projet_prosqlDataSet9TableAdapters.PARTIETableAdapter();
@@ -45,38 +42,13 @@ namespace formjdrppe
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idpartieDataGridViewTextBoxColumn,
-            this.nomDataGridViewTextBoxColumn,
-            this.datestartDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.pARTIEBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(343, 217);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
-            // 
-            // idpartieDataGridViewTextBoxColumn
-            // 
-            this.idpartieDataGridViewTextBoxColumn.DataPropertyName = "id_partie";
-            this.idpartieDataGridViewTextBoxColumn.HeaderText = "id_partie";
-            this.idpartieDataGridViewTextBoxColumn.Name = "idpartieDataGridViewTextBoxColumn";
-            this.idpartieDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            // 
-            // datestartDataGridViewTextBoxColumn
-            // 
-            this.datestartDataGridViewTextBoxColumn.DataPropertyName = "date_start";
-            this.datestartDataGridViewTextBoxColumn.HeaderText = "date_start";
-            this.datestartDataGridViewTextBoxColumn.Name = "datestartDataGridViewTextBoxColumn";
             // 
             // pARTIEBindingSource
             // 
@@ -114,8 +86,5 @@ namespace formjdrppe
         private projet_prosqlDataSet9 projet_prosqlDataSet9;
         private System.Windows.Forms.BindingSource pARTIEBindingSource;
         private projet_prosqlDataSet9TableAdapters.PARTIETableAdapter pARTIETableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idpartieDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datestartDataGridViewTextBoxColumn;
     }
 }
