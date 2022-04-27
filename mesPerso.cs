@@ -38,9 +38,9 @@ namespace formjdrppe
         private void dataGridView1_Click_1(object sender, EventArgs e)
         {
             //int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            FichePerso ficheperso = new FichePerso(id);
+            //FichePerso ficheperso = new FichePerso(id);
 
-            ficheperso.ShowDialog();
+            //ficheperso.ShowDialog();
         }
     }
 }

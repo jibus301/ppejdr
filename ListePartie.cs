@@ -27,9 +27,9 @@ namespace formjdrppe
         private void dataGridView1_Click(object sender, EventArgs e)
         {   
             
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            ecranPartie partie = new ecranPartie(id);
-            partie.ShowDialog();
+            //int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            //ecranPartie partie = new ecranPartie(id);
+            //partie.ShowDialog();
             
         }
     }
