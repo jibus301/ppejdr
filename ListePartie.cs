@@ -20,7 +20,7 @@ namespace formjdrppe
         private void ListePartie_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'projet_prosqlDataSet9.PARTIE'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.pARTIETableAdapter.Fill(this.projet_prosqlDataSet9.PARTIE);
+            // this.pARTIETableAdapter.Fill(this.projet_prosqlDataSet9.PARTIE);
 
         }
 

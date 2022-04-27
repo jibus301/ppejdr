@@ -20,7 +20,7 @@ namespace formjdrppe
         private void ListeJoueur_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'projet_prosqlDataSet8.JOUEUR'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.jOUEURTableAdapter.Fill(this.projet_prosqlDataSet8.JOUEUR);
+            // this.jOUEURTableAdapter.Fill(this.projet_prosqlDataSet8.JOUEUR);
 
         }
     }

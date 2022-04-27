@@ -20,17 +20,17 @@ namespace formjdrppe
         private void partieEnCours_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'dataSet1.View_Partie_Perso'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            int idJoueur = global.idJoueurConnecte;
+            //int idJoueur = global.idJoueurConnecte;
 
-            if(global.isAdmin == true)
-            {
-                this.view_Partie_PersoTableAdapter2.Fill(this.dataSet1.View_Partie_Perso);
-            }
-            else
-            {
-                this.view_Partie_PersoTableAdapter2.FillBy(this.dataSet1.View_Partie_Perso, idJoueur);
+            //if(global.isAdmin == true)
+            //{
+            //    this.view_Partie_PersoTableAdapter2.Fill(this.dataSet1.View_Partie_Perso);
+            //}
+            //else
+            //{
+            //    this.view_Partie_PersoTableAdapter2.FillBy(this.dataSet1.View_Partie_Perso, idJoueur);
 
-            }
+            //}
 
 
 
