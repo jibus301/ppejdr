@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace formjdrppe.entities
+namespace formjdrppe
 {
 
     public class Users

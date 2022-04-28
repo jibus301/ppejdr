@@ -29,20 +29,37 @@ namespace formjdrppe
 
     class api
     {
-        public static HttpClient client = new HttpClient();
+        public static HttpClient client = null;
 
-        public static string ipApi = "http://127.0.0.1:8080/";
+        public static string ipAppiDefaut = "http://127.0.0.1:8080/";
+        public static string ipApi = ipAppiDefaut;
 
-        public static Uri uri = new Uri(ipApi);
 
+        public static void Adressage_API()
+        {
+            Uri uri = new Uri(ipApi);
+            client.BaseAddress = uri;
 
+            
+        }
 
         public static async Task<bool> LoginAsync(UserLogin user)
         {
             try
             {
-                client.BaseAddress = uri;
-                HttpResponseMessage response = await client.PostAsJsonAsync("user/login", user);
+                if (client!=null)
+                {
+                    client.CancelPendingRequests();
+                    client = new HttpClient();
+                }
+                else
+                {
+                    client = new HttpClient();
+                }
+
+                
+                Adressage_API();
+                HttpResponseMessage response = await client.PostAsJsonAsync("auth/login", user);
                 response.EnsureSuccessStatusCode();
                 //await response.Content.ReadAsAsync<HttpResponseMessage>();
 
@@ -61,7 +78,7 @@ namespace formjdrppe
                 }
                 
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 
                 throw;
@@ -73,9 +90,13 @@ namespace formjdrppe
         {
             try
             {
-                
-                HttpResponseMessage response = await client.PostAsJsonAsync("user/logout", new { });
+                if (client == null) return null;
+
+                HttpResponseMessage response = await client.PostAsJsonAsync("users/logout", new { });
                 response.EnsureSuccessStatusCode();
+
+                client.CancelPendingRequests();
+                client = null;
 
                 return response;
                 
@@ -85,22 +106,24 @@ namespace formjdrppe
 
 
                 MessageBox.Show(err.ToString());
-                throw;
+                return null;
+                //throw;
+                
             }
 
         }
 
-        public static async Task<User> GetUserAsync()
+        public static async Task<Users> GetUserAsync()
         {
-            User user = null;
-            HttpResponseMessage response = await client.GetAsync("user/me");
+            Users user = null;
+            HttpResponseMessage response = await client.GetAsync("users/me");
             response.EnsureSuccessStatusCode();
 
            
 
             if (response.IsSuccessStatusCode)
             {
-                user = await response.Content.ReadAsAsync<User>();
+                user = await response.Content.ReadAsAsync<Users>();
             }
             return user;
 
