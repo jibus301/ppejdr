@@ -30,7 +30,7 @@ namespace formjdrppe
 
         public static string charaName;
 
-        public static User ConnectedUser;
+        public static Users ConnectedUser;
 
         public static string token;
 
