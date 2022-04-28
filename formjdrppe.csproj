@@ -270,6 +270,20 @@
     <Compile Include="ecranPartie.Designer.cs">
       <DependentUpon>ecranPartie.cs</DependentUpon>
     </Compile>
+    <Compile Include="entities\characters.cs" />
+    <Compile Include="entities\classes.cs" />
+    <Compile Include="entities\items.cs" />
+    <Compile Include="entities\messages.cs" />
+    <Compile Include="entities\races.cs" />
+    <Compile Include="entities\rarityitems.cs" />
+    <Compile Include="entities\rooms.cs" />
+    <Compile Include="entities\room_characters.cs" />
+    <Compile Include="entities\sessions.cs" />
+    <Compile Include="entities\skills.cs" />
+    <Compile Include="entities\skill_characters.cs" />
+    <Compile Include="entities\typeitems.cs" />
+    <Compile Include="entities\typeitem_items.cs" />
+    <Compile Include="entities\user_profiles.cs" />
     <Compile Include="FichePerso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,7 +427,7 @@
       <DependentUpon>projet_prosqlDataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="user.cs" />
+    <Compile Include="entities\users.cs" />
     <Compile Include="Vuepersos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

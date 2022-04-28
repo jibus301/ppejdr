@@ -12,6 +12,8 @@ namespace formjdrppe
 {
     public partial class ChildPerso : Form
     {
+  
+        
         View_personnage perso;
         public ChildPerso(View_personnage personnage)
         {
