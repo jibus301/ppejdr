@@ -15,6 +15,7 @@ namespace formjdrppe
         private string firstname;
         private string lastname;
         private bool admin;
+        private string password;
 
         public static List<Users> allUsers = new List<Users>();
 
@@ -22,13 +23,21 @@ namespace formjdrppe
 
         public Users() { }
 
-        public Users(int Id, string Username, string Firstname, string Lastname, bool Admin)
+        public Users(int Id, string Username, string Firstname, string Lastname, bool Admin, string Password)
         {
              id = Id;
              username = Username ;
              firstname = Firstname ;
              lastname = Lastname ;
              admin = Admin ;
+            password = Password;
+        }
+        public Users(string Username, string Firstname, string Lastname, string Password)
+        {
+            username = Username;
+            firstname = Firstname;
+            lastname = Lastname;
+            password = Password;
         }
 
         public int Id
@@ -87,11 +96,22 @@ namespace formjdrppe
             }
         }
 
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = value;
+            }
+        }
         //public List<string> headers = new List<string> { "id", "username", "Firstname", "Lastname", "Admin" };
 
         public static async void getAllUsers()
         {
-            object[] response = await api.getAsync("/users");
+            object[] response = await api.getAllAsync("/users");
 
             foreach (object obj in response)
             {
@@ -104,18 +124,17 @@ namespace formjdrppe
             
         }
 
-        public static async void getUser(int id)
+        public static async void getOneUser(int id)
         {
 
 
-            object[] response = await api.getAsync("/users/"+id);
-            foreach (object obj in response)
-            {
-                var res = JsonConvert.DeserializeObject<Users>(obj.ToString());
+            object response = await api.getOneAsync("/users/"+id);
+            
+                var res = JsonConvert.DeserializeObject<Users>(response.ToString());
 
                 allUsers.Add(res);
 
-            }
+            
 
             
 
