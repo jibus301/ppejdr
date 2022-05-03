@@ -92,7 +92,7 @@ namespace formjdrppe
             {
                 if (client == null) return null;
 
-                HttpResponseMessage response = await client.PostAsJsonAsync("users/logout", new { });
+                HttpResponseMessage response = await client.PostAsJsonAsync("auth/logout", new { });
                 response.EnsureSuccessStatusCode();
 
                 client.CancelPendingRequests();
@@ -132,13 +132,30 @@ namespace formjdrppe
 
 
 
-        static async Task<Uri> CreateAsync(string route, object content)
+        static async Task<Uri> CreateAsync(string route, object obj)
         {
-            HttpResponseMessage response = await client.PostAsJsonAsync(route, content);
+            HttpResponseMessage response = await client.PostAsJsonAsync(route, obj);
             response.EnsureSuccessStatusCode();
 
             // return URI of the created resource.
             return response.Headers.Location;
+        }
+
+        public static async Task<object[]> getAsync(string route)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(route);
+                response.EnsureSuccessStatusCode();
+                object[] res = await response.Content.ReadAsAsync<object[]>();
+                return res;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+                throw;
+            }
+            
         }
 
         

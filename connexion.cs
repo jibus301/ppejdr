@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -43,51 +47,51 @@ namespace formjdrppe
         }
 
         
-        private async void Log_et_delog(string username, string password)
-        {
+        //private async void Log_et_delog(string username, string password)
+        //{
 
-            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            UserLogin userlogin = new UserLogin(username, password);
-            Panel_Haut.Enabled = false;
-            Panel_Bas.Enabled = false;
-
-
-            bool isValidUser = await api.LoginAsync(userlogin);
-
-            if (isValidUser == true)
-            {
-
-                global.ConnectedUser = await api.GetUserAsync();
-
-                if (global.ConnectedUser.Admin == true)
-                {
-                    global.isAdmin = true;
-                }
+        //    this.Cursor = System.Windows.Forms.Cursors.AppStarting;
+        //    UserLogin userlogin = new UserLogin(username, password);
+        //    Panel_Haut.Enabled = false;
+        //    Panel_Bas.Enabled = false;
 
 
-                if (global.ConnectedUser!=null)
-                {
-                    var rep = await api.LogoutAsync();
+        //    bool isValidUser = await api.LoginAsync(userlogin);
 
-                    if (rep != null)
-                    {
-                        Login(username, password);
-
-                    }
-                }
+        //    if (isValidUser == true)
+        //    {
                 
-            }
-            else
-            {
-                this.Cursor = System.Windows.Forms.Cursors.Default;
-                Panel_Haut.Enabled = true;
-                Panel_Bas.Enabled = true;
-            }           
+        //        global.ConnectedUser = await api.GetUserAsync();
+
+        //        if (global.ConnectedUser.admin == true)
+        //        {
+        //            global.isAdmin = true;
+        //        }
+
+
+        //        if (global.ConnectedUser!=null)
+        //        {
+        //            var rep = await api.LogoutAsync();
+
+        //            if (rep != null)
+        //            {
+        //                Login(username, password);
+
+        //            }
+        //        }
+                
+        //    }
+        //    else
+        //    {
+        //        this.Cursor = System.Windows.Forms.Cursors.Default;
+        //        Panel_Haut.Enabled = true;
+        //        Panel_Bas.Enabled = true;
+        //    }           
 
            
 
-        }
-
+        //}
+     
         private async void Login(string username, string password)
         {
 
@@ -103,13 +107,17 @@ namespace formjdrppe
 
                 bool isValidUser = await api.LoginAsync(userlogin);
 
+
+                
+
+
                 if (isValidUser == true)
                 {
                     global.ConnectedUser = await api.GetUserAsync();
 
                     if (global.ConnectedUser.Admin == true)
-                    {
-                        global.isAdmin = true;
+                    { 
+                    global.isAdmin = true;
                     }
 
                     if (global.ConnectedUser != null)
@@ -127,8 +135,9 @@ namespace formjdrppe
                 }
 
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                MessageBox.Show(err.ToString());
                 this.Cursor = System.Windows.Forms.Cursors.Default;
                 Panel_Haut.Enabled = true;
                 Panel_Bas.Enabled = true;
@@ -163,14 +172,14 @@ namespace formjdrppe
 
         private void Button_Admin_Click(object sender, EventArgs e)
         {
-            Login("admin", "P@sword1");
+            Login("admin", "P@ssword1");
             
 
         }
 
         private void Button_User_Click(object sender, EventArgs e)
         {
-            Log_et_delog("User", "P@sword1");
+            //Log_et_delog("User", "P@sword1");
          //   Login("User", "P@sword1");
         }
 
