@@ -8,16 +8,16 @@ namespace formjdrppe.entities
 {
     public class Classes
     {
-        public int Id;
-        public string Name;
-        public int Life_point;
-        public int Strength;
-        public int Agility;
-        public int Intelligence;
-        public int Initiative;
-        public int Social;
-        public DateTime CreatedAt;
-        public DateTime UpdatedAt;
+        private int Id;
+        private string Name;
+        private int Life_point;
+        private int Strength;
+        private int Agility;
+        private int Intelligence;
+        private int Initiative;
+        private int Social;
+        private DateTime CreatedAt;
+        private DateTime UpdatedAt;
 
         public Classes(int id, string name, int life_point, int strength, int agility, int intelligence, int initiative, int social, DateTime ca, DateTime ua)
         {

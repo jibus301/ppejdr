@@ -22,46 +22,44 @@ namespace formjdrppe
 
         }
 
-        private void buttonValider_Click(object sender, EventArgs e)
+        private async void buttonValider_Click(object sender, EventArgs e)
         {
-
-            basejdrDataContext db = new basejdrDataContext();
-            JOUEUR p = new JOUEUR
+            try
             {
-
-
-                nom = textBoxNom.Text,
-
-                prenom = textBoxPrenom.Text,
-
-                pseudo = textBoxPseudo.Text,
-
-                pass = textBoxPass1.Text,
-
-
-            };
-
-            db.JOUEUR.InsertOnSubmit(p);
-            if (textBoxPass1.Text == textBoxPass2.Text)
-            {
-                try
+                if (textBoxPass1.Text == textBoxPass2.Text)
                 {
-                    db.SubmitChanges();
+                    string Username = textBoxPseudo.Text;
+
+                    string Firstname = textBoxPrenom.Text;
+
+                    string Lastname = textBoxNom.Text;
+
+                    string Password = textBoxPass1.Text;
+
+                    string response = await api.CreateAsync("auth/signup", new UserCreate(Username, Firstname, Lastname, Password));
+
+                   MessageBox.Show(response);
+                    
+                    
+                    
+                    this.Close(); 
+                    
+                    
                 }
-                catch (Exception err)
+
+
+
+                else
                 {
-                    Console.WriteLine(err);
-                    // Make some adjustments.
-                    // ...
-                    // Try again.
-                    db.SubmitChanges();
+                    labelErr.Text = "Les mots de passes sont différents";
                 }
-                
-                this.Close();
+
             }
-            else
+            catch (Exception err)
             {
-                labelErr.Text = "Les mots de passes sont différents";
+                this.Close();
+                MessageBox.Show(err.ToString());
+                
             }
             
 
