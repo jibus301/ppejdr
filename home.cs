@@ -162,7 +162,11 @@ namespace formjdrppe
 
         private async void home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            await api.LogoutAsync();
+            if (global.ACCES_PROGRAMME == true)
+            {
+                await api.LogoutAsync();
+
+            }
         }
     }
 }
