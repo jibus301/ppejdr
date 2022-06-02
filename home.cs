@@ -168,5 +168,38 @@ namespace formjdrppe
 
             }
         }
+<<<<<<< Updated upstream:home.cs
+=======
+
+        private void logsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            logs log = new formjdrppe.logs();
+            childFen(log);
+        }
+
+        private void listeDesClassesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListeClasse fen = new ListeClasse();
+            childFen(fen);
+        }
+
+        private void listesDesRacesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListeRace fen = new ListeRace();
+            childFen(fen);
+        }
+
+        private void listeDesObjetsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListeObjets fen = new ListeObjets();
+            childFen(fen);
+        }
+
+        private void listeCompétencesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListeCompetences fen = new ListeCompetences();
+            childFen(fen);
+        }
+>>>>>>> Stashed changes:General/home.cs
     }
 }

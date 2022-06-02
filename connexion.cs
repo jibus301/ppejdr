@@ -172,7 +172,7 @@ namespace formjdrppe
 
         private void Button_Admin_Click(object sender, EventArgs e)
         {
-            Login("admin", "P@ssword1");
+            Login("admin", "P@sword1");
             
 
         }
@@ -180,7 +180,11 @@ namespace formjdrppe
         private void Button_User_Click(object sender, EventArgs e)
         {
             //Log_et_delog("User", "P@sword1");
+<<<<<<< Updated upstream:connexion.cs
          //   Login("User", "P@sword1");
+=======
+            Login("User", "P@sword1");
+>>>>>>> Stashed changes:Pages/Login/connexion.cs
         }
 
         
